@@ -1,0 +1,36 @@
+<!-- src/app/components/sensor-table/sensor-table.component.html -->
+
+<div class="container">
+    <h2>Datos de Sensores</h2>
+  
+    <!-- Mostrar mensaje de carga -->
+    <div *ngIf="isLoading">
+      Cargando datos...
+    </div>
+  
+    <!-- Mostrar mensaje de error -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Tabla de datos -->
+    <table *ngIf="!isLoading && !errorMessage" border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Temperatura (°C)</th>
+          <th>Humedad (%)</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of sensorData">
+          <td>{{ data.id }}</td>
+          <td>{{ data.temperature }}</td>
+          <td>{{ data.humidity }}</td>
+          <td>{{ data.timestamp | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

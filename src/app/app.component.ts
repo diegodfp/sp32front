@@ -1,13 +1,13 @@
+// src/app/app.component.ts
+
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SensorTableComponent } from './components/sensor-table/sensor-table.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<app-sensor-table></app-sensor-table>`,
+  styles: [],
+  standalone: true, // Indica que es un componente independiente
+  imports: [SensorTableComponent] // Ya no es necesario HttpClientModule aquí
 })
-export class AppComponent {
-  title = 'sp32front';
-}
+export class AppComponent { }
