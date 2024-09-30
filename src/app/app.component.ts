@@ -5,7 +5,7 @@ import { SensorTableComponent } from './components/sensor-table/sensor-table.com
 
 @Component({
   selector: 'app-root',
-  template: `<app-sensor-table></app-sensor-table>`,
+  template: `<app-sensor-table></app-sensor-table>`, // Asegúrate de usar el selector correcto
   styles: [],
   standalone: true, // Indica que es un componente independiente
   imports: [SensorTableComponent] // Ya no es necesario HttpClientModule aquí
